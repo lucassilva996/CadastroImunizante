@@ -16,6 +16,8 @@ namespace CadastroImuno.Models
         [Required]
         public string Fabricante { get; set; }
         [Required]
-        public DateTime AnoLote { get; set; }
+        public string AnoLote { get; set; }
     }
+
+
 }
