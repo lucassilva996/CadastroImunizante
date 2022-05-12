@@ -21,14 +21,12 @@ namespace CadastroImuno.Controllers
             _context = context;
         }
 
-        // GET: api/Imunizantes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Imunizante>>> GetImunizantes()
         {
             return await _context.Imunizantes.ToListAsync();
         }
 
-        // GET: api/Imunizantes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Imunizante>> GetImunizante(int id)
         {
@@ -42,9 +40,7 @@ namespace CadastroImuno.Controllers
             return imunizante;
         }
 
-        // PUT: api/Imunizantes/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutImunizante(int id, Imunizante imunizante)
         {
@@ -74,9 +70,6 @@ namespace CadastroImuno.Controllers
             return NoContent();
         }
 
-        // POST: api/Imunizantes
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Imunizante>> PostImunizante(Imunizante imunizante)
         {
@@ -86,7 +79,6 @@ namespace CadastroImuno.Controllers
             return CreatedAtAction("GetImunizante", new { id = imunizante.Id }, imunizante);
         }
 
-        // DELETE: api/Imunizantes/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Imunizante>> DeleteImunizante(int id)
         {

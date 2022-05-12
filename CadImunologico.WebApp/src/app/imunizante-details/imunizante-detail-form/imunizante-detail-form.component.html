@@ -1,0 +1,19 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id" [value]="service.formData.Id" />
+    <div class="form-group">
+        <label>FABRICANTE</label>
+        <input class="form-control form-control-lg" placeholder="Digite o fabricante do imunizante" name="Fabricante"
+            #Fabricante="ngModel" [(ngModel)]="service.formData.Fabricante"
+            required [class.invalid]="Fabricante.invalid && Fabricante.touched">
+    </div>
+    <div class="form-group">
+        <label>ANO-LOTE</label>
+        <input class="form-control form-control-lg" placeholder="Digite o ano do lote" name="AnoLote"
+            #AnoLote="ngModel" [(ngModel)]="service.formData.AnoLote"
+            required maxlength="4" minlength="4" [class.invalid]="AnoLote.invalid && AnoLote.touched">
+    </div>
+    
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">CADASTRAR</button>
+    </div>
+</form>

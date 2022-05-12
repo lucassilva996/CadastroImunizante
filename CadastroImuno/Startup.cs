@@ -33,6 +33,7 @@ namespace CadastroImuno
         {
             services.AddControllers().AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<ImunizanteValidations>());
             services.AddDbContext<ImunizanteDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("ConexaoBanco")));
+            services.AddCors();
 
             services.AddSwaggerGen(c =>
             {
@@ -53,6 +54,11 @@ namespace CadastroImuno
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(options =>
+            options.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
