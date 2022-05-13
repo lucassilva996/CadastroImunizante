@@ -16,7 +16,7 @@ export class ImunizanteDetailsComponent implements OnInit {
 
   constructor(public service : ImunizanteService, 
     private toastr: ToastrService ) {}
-  
+    tableData: any = [];
 
   ngOnInit(): void {
     this.service.refreshList();

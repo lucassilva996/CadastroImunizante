@@ -16,23 +16,7 @@ export class ImunizanteService {
     formData: Imunizante = new Imunizante();
     list: Imunizante[];
     tableData: any = [];
-
-    getImunizante() {
-        return this.http.get(this.baseURL)
-        .pipe(
-            retry(1),
-            catchError(this.handleError)
-        )
-    }
-
-    getImunizanteById() {
-        return this.http.get<Imunizante>(`${this.baseURL}/${this.formData.Id}`)
-        .pipe(
-            retry(1),
-            catchError(this.handleError)
-        )
-    }
-
+    
     saveImunizante() {
         return this.http.post(this.baseURL, this.formData)
         .pipe(
@@ -57,6 +41,12 @@ export class ImunizanteService {
         )
     }
     
+    refreshList() {
+        this.http.get(this.baseURL)
+        .toPromise()
+        .then(res => {return this.tableData = res})
+      }
+
     handleError(error: HttpErrorResponse) {
         let errorMessage = '';
         if(error.error instanceof ErrorEvent){
@@ -67,10 +57,4 @@ export class ImunizanteService {
         console.log(errorMessage);
         return throwError(errorMessage);
       };
-
-      refreshList() {
-        this.http.get(this.baseURL)
-        .toPromise()
-        .then(res => {return this.tableData = res})
-      }
 }
