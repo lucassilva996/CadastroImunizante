@@ -1,7 +1,7 @@
 # Cadastro de Imunizantes
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/lucassilva996/CadastroImunizante)
-![GitHub language count](https://img.shields.io/github/languages/count/lucassilva996/CadastroImunizante?style=plastic)
-![GitHub top language](https://img.shields.io/github/languages/top/lucassilva996/CadastroImunizante?style=plastic)
+![GitHub language count](https://img.shields.io/github/languages/count/lucassilva996/CadastroImunizante)
+![GitHub top language](https://img.shields.io/github/languages/top/lucassilva996/CadastroImunizante)
 
 <p align="center">
   <img width="470" src="assets/cad_imunizantes.png">
