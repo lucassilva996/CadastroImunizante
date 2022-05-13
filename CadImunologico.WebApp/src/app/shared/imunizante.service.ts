@@ -26,11 +26,7 @@ export class ImunizanteService {
     }
 
     updateImunizante() {
-        return this.http.put(`${this.baseURL}/${this.formData.Id}`, this.formData)
-        .pipe(
-            retry(1),
-            catchError(this.handleError)
-        )
+        return this.http.put(`${this.baseURL}/${this.formData.Id}`, this.formData);
     }
 
     deleteImunizante(Id: number) {

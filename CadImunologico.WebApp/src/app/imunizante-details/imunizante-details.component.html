@@ -21,6 +21,9 @@
                     <td (click)="populateForm(row)">{{row.fabricante}}</td>
                     <td (click)="populateForm(row)">{{row.anoLote}}</td>
                     <td>
+                        <i class="far fa-edit fa-lg" (click)="populateForm(row.id)"></i>
+                    </td>
+                    <td>
                         <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(row.id)"></i>
                     </td>
                 </tr>

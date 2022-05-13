@@ -11,7 +11,7 @@
         <label>ANO-LOTE</label>
         <input class="form-control form-control-lg" placeholder="Digite o ano do lote" name="AnoLote"
             #AnoLote="ngModel" [(ngModel)]="service.formData.AnoLote"
-            required maxlength="4" minlength="4"  [class.invalid]="AnoLote.invalid && AnoLote.touched">
+            required maxlength="4" minlength="1" [class.invalid]="AnoLote.invalid && AnoLote.touched">
         <div *ngIf="!AnoLote.errors">O ano do Lote deve ser maior que 2020</div>
     </div>
     

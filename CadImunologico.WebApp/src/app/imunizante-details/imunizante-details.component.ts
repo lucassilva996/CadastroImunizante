@@ -16,15 +16,13 @@ export class ImunizanteDetailsComponent implements OnInit {
 
   constructor(public service : ImunizanteService, 
     private toastr: ToastrService ) {}
-    tableData: any = [];
-
   ngOnInit(): void {
     this.service.refreshList();
   }
 
-  populateForm(selectedRecord: Imunizante){
+  populateForm(selectedRecord: Imunizante) {
     this.service.formData = Object.assign({}, selectedRecord);
-  }  
+  }
 
   onDelete(Id: number) {
     if(confirm('Você deseja deletar este registro?')) {

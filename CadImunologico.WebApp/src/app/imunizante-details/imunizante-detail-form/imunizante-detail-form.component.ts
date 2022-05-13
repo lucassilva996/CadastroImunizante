@@ -44,8 +44,9 @@ export class ImunizanteDetailFormComponent implements OnInit {
         this.service.refreshList();
         this.toastr.info('Registro atualizado com sucesso!')
       },
-      err => { console.log(err); }
-    );
+      err => { console.log(err); 
+      }
+    )
   }
 
 
